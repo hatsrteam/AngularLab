@@ -1,3 +1,20 @@
-<p>
-  master-page works!
-</p>
+<table border="1">
+<tr>
+<td><img src="http://www.questpond.com/img/logo.jpg" alt="Alternate Text"/>
+</td>
+<td>Header</td>
+</tr>
+<tr>
+<td><u>Left Menu</u><br /><br /><br />
+<a [routerLink]="['Supplier']">Supplier</a> <br /><br />
+<a [routerLink]="['Customer']">Customer</a></td><td>
+<div id=”dynamicscreen”>
+<router-outlet></router-outlet>
+</div>
+</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td></td>
+</tr>
+</table>
