@@ -6,9 +6,9 @@ import { CustomerComponent } from '../../component/customer/customer.component';
 import { MasterPageComponent } from '../../component/master-page/master-page.component';
 import {SupplierComponent}from '../../component/supplier/supplier.component'
 import {WelcomeComponent}from '../../component/welcome/welcome.component'
-import {ApplicationRoutes} from './routing'
-import {RouterModule,Routes} from '@angular/router'
 
+import {RouterModule,Routes} from '@angular/router'
+import {ApplicationRoutes} from './routing'
 
 
 @NgModule({
