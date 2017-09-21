@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import {Customer} from '../../Model/Customer'
+
 
 @Component({
   selector: 'customer-ui',
@@ -9,9 +10,13 @@ import {Customer} from '../../Model/Customer'
 export class CustomerComponent implements OnInit {
   CurrentCustomer:Customer = new Customer();
 
-  constructor() { }
+
+  constructor() {
+     
+   }
 
   ngOnInit() {
+     
   }
 
 }

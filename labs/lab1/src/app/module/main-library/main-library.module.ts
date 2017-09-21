@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 //import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from "@angular/forms"
+import {FormsModule,ReactiveFormsModule } from "@angular/forms"
 import { CustomerComponent } from '../../component/customer/customer.component';
 import { MasterPageComponent } from '../../component/master-page/master-page.component';
 import {SupplierComponent}from '../../component/supplier/supplier.component'
@@ -14,7 +14,7 @@ import {ApplicationRoutes} from './routing'
 @NgModule({
   imports: [RouterModule.forRoot(ApplicationRoutes),
             BrowserModule,
-            FormsModule
+            FormsModule, ReactiveFormsModule
             ],
   declarations: [MasterPageComponent,
                 CustomerComponent,

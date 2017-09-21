@@ -1,12 +1,37 @@
-<h1>Customer Testing</h1>
+<h1>Testing</h1>
+<form [formGroup]="CurrentCustomer.formGroup">
+
+    
+
+
+
+
 <div>
 Name:
-<input type="text" [(ngModel)]="CurrentCustomer.CustomerName"><br /><br />
+<input type="text" formControlName="CustomerNameControl" [(ngModel)]="CurrentCustomer.CustomerName" > 
+<div [hidden]="!(CurrentCustomer.formGroup.controls['CustomerNameControl'].hasError('required'))">Customer name is required </div>
+<br /><br />
+
 Code:
-<input type="text" [(ngModel)]="CurrentCustomer.CustomerCode"><br /><br />
+<input type="text" formControlName="CustomerCodeControl" [(ngModel)]="CurrentCustomer.CustomerCode">
+<div [hidden]="!(CurrentCustomer.formGroup.controls['CustomerCodeControl'].hasError('required'))">Customer code is required </div>
+<br /><br />
+
 Amount:
-<input type="text" [(ngModel)]="CurrentCustomer.CustomerAmount"><br /><br />
+<input type="text" formControlName="CustomerAmountControl" [(ngModel)]="CurrentCustomer.CustomerAmount"><br /><br />
+<div [hidden]="!(CurrentCustomer.formGroup.controls['CustomerAmountControl'].hasError('required'))">Amount is required </div>
+<br /><br />
+
 </div>
+
+
+
 {{CurrentCustomer.CustomerName}}<br /><br />
 {{CurrentCustomer.CustomerCode}}<br /><br />
 {{CurrentCustomer.CustomerAmount}}<br /><br />
+<input type="button" value="Click" [disabled]="!(CurrentCustomer.formGroup.valid)"/>
+
+
+
+</form>
+
