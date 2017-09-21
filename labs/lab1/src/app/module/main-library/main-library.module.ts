@@ -9,5 +9,5 @@ import { CustomerComponent } from '../../component/customer/customer.component';
             FormsModule],
   declarations: [CustomerComponent],
   bootstrap: [CustomerComponent]
-})
+}) 
 export class MainLibraryModule { }
