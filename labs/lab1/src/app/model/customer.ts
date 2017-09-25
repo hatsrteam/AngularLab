@@ -17,7 +17,7 @@ export class Customer {
         // the form object
         var _builder = new FormBuilder();
         this.formGroup = _builder.group({});
-        
+
         // Adding a simple validation
         this.formGroup.addControl('CustomerNameControl', new FormControl('',Validators.required));
 

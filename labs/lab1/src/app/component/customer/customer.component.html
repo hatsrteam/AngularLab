@@ -1,10 +1,6 @@
 <h1>Testing</h1>
 <form [formGroup]="CurrentCustomer.formGroup">
 
-    
-
-
-
 
 <div>
 Name:
@@ -15,11 +11,11 @@ Name:
 Code:
 <input type="text" formControlName="CustomerCodeControl" [(ngModel)]="CurrentCustomer.CustomerCode">
 <div [hidden]="!(CurrentCustomer.formGroup.controls['CustomerCodeControl'].hasError('required'))">Customer code is required </div>
+<div [hidden]="!(CurrentCustomer.formGroup.controls['CustomerCodeControl'].hasError('pattern'))">Pattern not proper </div>
 <br /><br />
 
 Amount:
-<input type="text" formControlName="CustomerAmountControl" [(ngModel)]="CurrentCustomer.CustomerAmount"><br /><br />
-<div [hidden]="!(CurrentCustomer.formGroup.controls['CustomerAmountControl'].hasError('required'))">Amount is required </div>
+<input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="CurrentCustomer.CustomerAmount"><br /><br />
 <br /><br />
 
 </div>
@@ -29,8 +25,22 @@ Amount:
 {{CurrentCustomer.CustomerName}}<br /><br />
 {{CurrentCustomer.CustomerCode}}<br /><br />
 {{CurrentCustomer.CustomerAmount}}<br /><br />
-<input type="button" value="Click" [disabled]="!(CurrentCustomer.formGroup.valid)"/>
+Form Valid: {{CurrentCustomer.formGroup.valid}} <br /><br />
+<input type="button" value="Click" [disabled]="!(CurrentCustomer.formGroup.valid  )"/>
+<input type="button" value="Click" (click)="Add()"/>
 
+<table>
+<tr>
+<td>Name</td>
+<td>code</td>
+<td>amount</td>
+</tr>
+    <tr *ngFor="let cust of Customers">
+    <td>{{cust.CustomerName}}</td>
+    <td>{{cust.CustomerCode}}</td>
+    <td>{{cust.CustomerAmount}}</td>
+    </tr>
+</table>
 
 
 </form>
